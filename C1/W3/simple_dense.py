@@ -1,11 +1,11 @@
 """
-Description: Creating a custom tf Layer
+Description: Creating a simple custom tf Layer
 
 Author: Skif Pankov (ス)
 Created: 27/12/2020
 """
 
-
+from typing import Optional
 from tensorflow.python.keras.engine.base_layer import Layer
 
 import tensorflow as tf
@@ -17,11 +17,19 @@ class SimpleDense(Layer):
     """
 
     def __init__(self,
-                 units: int = 32):
+                 units: int = 32,
+                 activation: Optional[str] = None):
+        """
+        Initialisation
+
+        :param units: Number of units
+        :param activation: Optional keras-recognised name of the activation function used by the layer
+        """
 
         super(SimpleDense, self).__init__()
 
         self.units = units
+        self.activation = tf.keras.activations.get(activation)
         self.w = None
         self.b = None
 
@@ -51,6 +59,8 @@ class SimpleDense(Layer):
             trainable=True
         )
 
+        super().build(input_shape)
+
     def call(self, inputs):
         """
         Applies layer on inputs
@@ -60,23 +70,6 @@ class SimpleDense(Layer):
         :return: Tensor of the same type as self.w and self.b
         """
 
-        out = tf.matmul(inputs, self.w) + self.b
+        out = self.activation(tf.matmul(inputs, self.w) + self.b)
 
         return out
-
-
-def test_custom_layer():
-
-    layer = SimpleDense(units=1)
-
-    x = tf.ones((1, 1))
-
-    y = layer(x)
-
-    print(layer.variables)
-    print(f'y: {y}')
-
-
-if __name__ == "__main__":
-
-    test_custom_layer()
