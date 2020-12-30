@@ -1,6 +1,7 @@
 name: env_tf
 channels:
   - conda-forge
+  - anaconda
   - defaults
 dependencies:
   - _libgcc_mutex=0.1=main
@@ -18,10 +19,10 @@ dependencies:
   - blinker=1.4=py37_0
   - brotlipy=0.7.0=py37h27cfd23_1003
   - c-ares=1.17.1=h27cfd23_0
-  - ca-certificates=2020.12.8=h06a4308_0
+  - ca-certificates=2020.10.14=0
   - cachetools=4.2.0=pyhd3eb1b0_0
   - cairo=1.14.12=h8948797_3
-  - certifi=2020.12.5=py37h06a4308_0
+  - certifi=2020.6.20=py37_0
   - cffi=1.14.0=py37h2e261b9_0
   - chardet=3.0.4=py37h06a4308_1003
   - chart-studio=1.1.0=pyh9f0ad1d_0
@@ -36,16 +37,19 @@ dependencies:
   - dbus=1.13.18=hb2f20db_0
   - decorator=4.4.2=py_0
   - defusedxml=0.6.0=py_0
+  - dill=0.3.2=py_0
   - entrypoints=0.3=py37_0
   - expat=2.2.10=he6710b0_2
   - fontconfig=2.13.0=h9420a91_0
   - freetype=2.10.4=h5ab3b9f_0
   - fribidi=1.0.10=h7b6447c_0
+  - future=0.18.2=py37_1
   - gast=0.3.3=py_0
   - glib=2.63.1=h5a9c865_0
   - google-auth=1.24.0=pyhd3eb1b0_0
   - google-auth-oauthlib=0.4.2=pyhd3eb1b0_2
   - google-pasta=0.2.0=py_0
+  - googleapis-common-protos=1.52.0=py37_0
   - graphite2=1.3.14=h23475e2_0
   - graphviz=2.40.1=h21bd128_2
   - grpcio=1.31.0=py37hf8bcb03_0
@@ -125,9 +129,11 @@ dependencies:
   - pixman=0.40.0=h7b6447c_0
   - plotly=4.14.1=pyhd3eb1b0_0
   - prometheus_client=0.9.0=pyhd3eb1b0_0
+  - promise=2.3=py37_0
   - prompt-toolkit=3.0.8=py_0
   - prompt_toolkit=3.0.8=0
   - protobuf=3.13.0.1=py37he6710b0_1
+  - psutil=5.7.2=py37h7b6447c_0
   - ptyprocess=0.6.0=pyhd3eb1b0_2
   - pyasn1=0.4.8=py_0
   - pyasn1-modules=0.2.8=py_0
@@ -164,8 +170,10 @@ dependencies:
   - tensorboard-plugin-wit=1.6.0=py_0
   - tensorflow=2.2.0=gpu_py37h1a511ff_0
   - tensorflow-base=2.2.0=gpu_py37h8a81be8_0
+  - tensorflow-datasets=1.2.0=py37_0
   - tensorflow-estimator=2.2.0=pyh208ff02_0
   - tensorflow-gpu=2.2.0=h0d30ee6_0
+  - tensorflow-metadata=0.14.0=pyhe6710b0_1
   - termcolor=1.1.0=py37_1
   - terminado=0.9.1=py37_0
   - testpath=0.4.4=py_0
